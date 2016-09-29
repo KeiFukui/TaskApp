@@ -1,0 +1,22 @@
+<h1>Task App</h1>
+
+  <% @projects.each do |project| %>
+
+  <li>
+    <!-- 登録情報参照ページへのリンク -->
+    <%= link_to project.title, project_path(project.id) %>
+    <!-- タスクの消化状況を表示 -->
+    <!-- (残件数/総数) -->
+    (<%= project.tasks.unfinished.count %>/<%= project.tasks.count %>)
+    <!-- 編集ページへのリンク -->
+    <%= link_to "[Edit]", edit_project_path(project.id) %>
+    <!-- 削除リンク -->
+    <!-- methodにdeleteを指定することで、Destroyアクションと紐づけられる -->
+    <!-- dataで確認メッセージを指定 -->
+    <%= link_to "[Delete]", project_path(project.id), method: :delete, data: {confirm: "are you sure?"} %>
+  </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Add New", new_project_path %></p>
+<p><%= link_to "HOME", "projects_path" %></p>

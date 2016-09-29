@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>TaskApp</title>
+
+<meta charset="utf-8">
+
+<!-- content属性にページの紹介文を記述 -->
+<meta name="description" content="">
+
+<!-- content属性にページの著者情報を記述 -->
+<meta name="author" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+     <%= csrf_meta_tags %>
+
+<link rel="shortcut icon" href="">
+</head>
+<body>
+
+<!-- コンテンツを記述 -->
+<%= yield %>
+
+
+
+</body>
+</html>
